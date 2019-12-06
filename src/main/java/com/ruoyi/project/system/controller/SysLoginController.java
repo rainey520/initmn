@@ -4,6 +4,7 @@ import com.ruoyi.common.core.controller.BaseController;
 import com.ruoyi.common.core.domain.AjaxResult;
 import com.ruoyi.common.utils.ServletUtils;
 import com.ruoyi.common.utils.StringUtils;
+import com.ruoyi.framework.util.ShiroUtils;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.UsernamePasswordToken;
@@ -18,7 +19,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  * 登录验证
- * 
+ *
  * @author ruoyi
  */
 @Controller
@@ -45,6 +46,8 @@ public class SysLoginController extends BaseController
         try
         {
             subject.login(token);
+            String sessionId = ShiroUtils.getSessionId();
+            System.out.println("JSESSIONID="+sessionId);
             return success();
         }
         catch (AuthenticationException e)

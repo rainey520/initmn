@@ -15,7 +15,13 @@
     <meta http-equiv="refresh" content="0;ie.html" />
     <![endif]-->
     <link rel="shortcut icon" href="../static/favicon.ico" th:href="@{favicon.ico}"/>
-    <style type="text/css">label.error { position:inherit;  }</style>
+    <style type="text/css">
+        label.error { position:inherit;  }
+        body.signin{
+            background: none;
+            background-color: #1eb0b9;
+        }
+    </style>
     <script>
         if(window.top!==window.self){window.top.location=window.location};
     </script>
@@ -36,7 +42,7 @@
                         <li><i class="fa fa-arrow-circle-o-right m-r-xs"></i> Thymeleaf</li>
                         <li><i class="fa fa-arrow-circle-o-right m-r-xs"></i> Bootstrap</li>
                     </ul>
-                    <strong>还没有账号？ <a href="#">立即注册&raquo;</a></strong>
+                    <strong>还没有账号？ <a href="javascript:void(0)">立即注册&raquo;</a></strong>
                 </div>
             </div>
             <div class="col-sm-5">
